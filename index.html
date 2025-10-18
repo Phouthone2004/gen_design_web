@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Lao', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #065f46 0%, #047857 50%, #1f2937 100%);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+        
+        .nav-scrolled {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+
+    <!-- =================================================================
+    // [1] App Bar / Navigation
+    // ================================================================= -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold text-emerald-900">
+                ARCHI<span class="text-emerald-600">TECT</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-emerald-600 transition">ໜ້າຫຼັກ</a>
+                <a href="#about" class="hover:text-emerald-600 transition">ກ່ຽວກັບ</a>
+                <a href="#projects" class="hover:text-emerald-600 transition">ຜົນງານ</a>
+                <a href="#contact" class="hover:text-emerald-600 transition">ຕິດຕໍ່</a>
+            </div>
+            <button class="bg-emerald-700 text-white px-6 py-2 rounded-full text-sm hover:bg-emerald-800 transition">
+                ປຶກສາຟຣີ
+            </button>
+        </div>
+    </nav>
+    <!-- [1] End App Bar -->
+
+    <!-- =================================================================
+    // [2] Hero Banner / Home Section
+    // ================================================================= -->
+    <section id="home" class="relative min-h-screen flex items-center hero-bg">
+        <div class="absolute inset-0 opacity-20" style="background-image: url('images/bandner.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="relative max-w-7xl mx-auto px-6 text-white py-20">
+            <div class="max-w-3xl">
+                <h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+                    ອອກແບບ<br>ພື້ນທີ່<br>ທີ່ມີຊີວິດ
+                </h1>
+                <p class="text-xl mb-8 text-emerald-100 leading-relaxed">
+                    ສ້າງສັນຄວາມງາມ ແລະ ການນຳໃຊ້ທີ່ສົມບູນແບບ<br>
+                    ເພື່ອໂຄງການທີ່ມີຄຸນຄ່າຂອງທ່ານ
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-white text-emerald-900 px-8 py-4 rounded-full font-medium hover:bg-emerald-50 transition inline-flex items-center">
+                        ເບິ່ງຜົນງານ
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-emerald-900 transition">
+                        ຕິດຕໍ່ພວກເຮົາ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [2] End Hero Banner -->
+
+    <!-- =================================================================
+    // [3] Body Content
+    // ================================================================= -->
+
+    <!-- [3.1] Stats Section -->
+    <section class="py-20 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-700 text-white rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-4xl font-bold text-emerald-900 mb-2">15+</div>
+                    <div class="text-gray-600">ປີປະສົບການ</div>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-700 text-white rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <div class="text-4xl font-bold text-emerald-900 mb-2">200+</div>
+                    <div class="text-gray-600">ໂຄງການສຳເລັດ</div>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-700 text-white rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-4xl font-bold text-emerald-900 mb-2">500+</div>
+                    <div class="text-gray-600">ລູກຄ້າພໍໃຈ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [3.2] About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl font-bold mb-6 text-emerald-900">ກ່ຽວກັບພວກເຮົາ</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        ພວກເຮົາເປັນທີມສະຖາປະນິກມືອາຊີບທີ່ມີຄວາມຫຼົງໄຫຼໃນການສ້າງສັນພື້ນທີ່ທີ່ງາມ ແລະ ມີປະໂຫຍດ. ດ້ວຍປະສົບການຫຼາຍກວ່າ 15 ປີ, ພວກເຮົาມີຄວາມເຊື່ອໝັ້ນວ່າສະຖາປັດທີ່ດີຕ້ອງສົມດູນລະຫວ່າງຄວາມງາມ, ການໃຊ້ປະໂຫຍດ ແລະ ສິ່ງແວດລ້ອມ.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                        ທຸກໆໂຄງການແມ່ນພິເສດ ແລະ ເຮົາມີຄວາມມຸ່ງໝັ້ນທີ່ຈະແປຄວາມຝັນຂອງທ່ານໃຫ້ກາຍເປັນຈິງດ້ວຍການອອກແບບທີ່ໂດດເດັ່ນ ແລະ ທັນສະໄໝ.
+                    </p>
+                    <button class="bg-emerald-700 text-white px-8 py-4 rounded-full font-medium hover:bg-emerald-800 transition">
+                        ຮຽນຮູ້ເພີ່ມເຕີມ
+                    </button>
+                </div>
+                <div class="relative h-96 md:h-full min-h-96">
+                    <div class="absolute inset-0 bg-emerald-700 rounded-3xl transform rotate-3"></div>
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800" alt="Architecture" class="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [3.3] Projects Section -->
+    <section id="projects" class="py-24 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 text-emerald-900">ຜົນງານຂອງພວກເຮົາ</h2>
+                <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+                    ສຳຫຼວດໂຄງການທີ່ພວກເຮົາໄດ້ສ້າງສັນຂຶ້ນດ້ວຍຄວາມຕັ້ງໃຈ ແລະ ມາດຕະຖານສູງສຸດ
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-card cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg mb-4 h-80">
+                        <img style="background-image: url('images/bandner.jpg'); background-size: cover; background-position: center;" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="text-sm text-emerald-200 mb-2">ງານອອກແບບພາຍໃນ</div>
+                            <h3 class="text-2xl font-bold">ໂຮງແຮມ</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg mb-4 h-80">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Office Complex" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="text-sm text-emerald-200 mb-2">ອາຄານພານິດ</div>
+                            <h3 class="text-2xl font-bold">Office Complex</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg mb-4 h-80">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800" alt="Urban Living" class="project-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="text-sm text-emerald-200 mb-2">ຄອນໂດທັນສະໄໝ</div>
+                            <h3 class="text-2xl font-bold">Urban Living</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="border-2 border-emerald-700 text-emerald-700 px-8 py-4 rounded-full font-medium hover:bg-emerald-700 hover:text-white transition">
+                    ເບິ່ງທັງໝົດ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- [3.4] Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl font-bold mb-6 text-emerald-900">ຕິດຕໍ່ພວກເຮົາ</h2>
+                    <p class="text-gray-700 text-lg mb-8">
+                        ພ້ອມທີ່ຈະເລີ່ມຕົ້ນໂຄງການຂອງທ່ານບໍ? ຕິດຕໍ່ພວກເຮົາເພື່ອປຶກສາຟຣີ
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-emerald-900 mb-1">WhatsApp</div>
+                                <div class="text-gray-600">+856 20 76 767 888</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-emerald-900 mb-1">ອີເມວ</div>
+                                <div class="text-gray-600">Gen-Design999@outlook.co.th</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-emerald-900 mb-1">ທີ່ຢູ່</div>
+                                <div class="text-gray-600">ນະຄອນຫຼວງວຽງຈັນ, ລາວ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-emerald-50 p-8 rounded-3xl">
+                    <div class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="ຊື່ຂອງທ່ານ" class="w-full px-6 py-4 rounded-full border-2 border-emerald-200 focus:border-emerald-700 focus:outline-none">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="ອີເມວ" class="w-full px-6 py-4 rounded-full border-2 border-emerald-200 focus:border-emerald-700 focus:outline-none">
+                        </div>
+                        <div>
+                            <textarea placeholder="ຂໍ້ຄວາມ" class="w-full px-6 py-4 rounded-3xl border-2 border-emerald-200 focus:border-emerald-700 focus:outline-none resize-none" style="height: 150px;"></textarea>
+                        </div>
+                        <button class="w-full bg-emerald-700 text-white py-4 rounded-full font-medium hover:bg-emerald-800 transition">
+                            ສົ່ງຂໍ້ຄວາມ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- [3] End Body Content -->
+
+
+    <!-- =================================================================
+    // [4] Footer
+    // ================================================================= -->
+    <footer class="bg-emerald-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-bold mb-4">ARCHI<span class="text-emerald-400">TECT</span></div>
+            <p class="text-emerald-200 mb-6">ສ້າງສັນພື້ນທີ່ທີ່ມີຊີວິດ ດ້ວຍການອອກແບບທີ່ໂດດເດັ່ນ</p>
+            <div class="text-emerald-300 text-sm">
+                © 2024 Architect Studio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- [4] End Footer -->
+
+
+    <!-- =================================================================
+    // [5] Scripts
+    // ================================================================= -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled', 'py-4');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-4');
+                navbar.classList.add('py-6');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- [5] End Scripts -->
+
+</body>
+</html>
+
