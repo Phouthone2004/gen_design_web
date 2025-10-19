@@ -728,14 +728,16 @@
             const detailedCtaContainer = document.getElementById('detailed-cta-container');
 
             if (detailedContainer && loadMoreDetailedBtn) {
-                // Generate detailed projects
-                for (let i = 1; i <= 4; i++) {
+                // Generate 18 detailed project images (1.png - 18.png)
+                const totalDetailed = 18;
+                const initialDetailedShow = 3;
+                for (let i = 1; i <= totalDetailed; i++) {
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'mb-12 detailed-item';
-                    if (i > 3) {
+                    if (i > initialDetailedShow) {
                         imgDiv.classList.add('hidden');
                     }
-                    imgDiv.innerHTML = `<img src="images/detailed/${i}.svg" alt="Project banner ${i}" class="w-full h-auto rounded-2xl shadow-lg" loading="lazy">`;
+                    imgDiv.innerHTML = `<img src="images/detailed/${i}.png" alt="Project banner ${i}" class="w-full h-auto rounded-2xl shadow-lg" loading="lazy">`;
                     detailedContainer.appendChild(imgDiv);
                 }
                 const detailedItems = detailedContainer.querySelectorAll('.detailed-item');
@@ -743,12 +745,16 @@
                 loadMoreDetailedBtn.addEventListener('click', function () {
                     const isLess = this.dataset.state === 'less';
                     if (isLess) {
-                        detailedItems[3].classList.remove('hidden');
+                        // Show all items
+                        detailedItems.forEach(item => item.classList.remove('hidden'));
                         this.textContent = 'ສະແດງໜ້ອຍລົງ';
                         this.dataset.state = 'more';
                         detailedCtaContainer.classList.remove('hidden');
                     } else {
-                        detailedItems[3].classList.add('hidden');
+                        // Hide items beyond the first 3
+                        detailedItems.forEach((item, index) => {
+                            if (index >= initialDetailedShow) item.classList.add('hidden');
+                        });
                         this.textContent = 'ເບິ່ງເພີ່ມເຕີມ';
                         this.dataset.state = 'less';
                         detailedCtaContainer.classList.add('hidden');
